@@ -6,7 +6,7 @@ Ext.define('MyApp.view.main.MainController', {
     //requires:'MyApp.view.main.Checkout', //добавил
 
 
-
+/*
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Неуспел', 'Нужен Ajax', 'onConfirm', this);
     },
@@ -16,7 +16,7 @@ Ext.define('MyApp.view.main.MainController', {
             
         }
     },
-
+*/
     onClickButton: function () {
         localStorage.removeItem('MyLoggedIn');
 
