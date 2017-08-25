@@ -1,23 +1,21 @@
 Ext.define('MyApp.view.main.Grid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'Ext.container.Container',
+
     xtype: 'gh-grid',
+
     requires:['MyApp.store.Companies',
-
+    'Ext.container.Container',
+    'Ext.layout.container.VBox',
+    'Ext.grid.*',
+    'MyApp.model.Companies'
     ],
-
-    plugins: [
-        'bufferedrenderer',
-        {
-            xclass: 'Ext.grid.plugin.RowEditing',
-            clicksToMoveEditor: 0,
-            autoCancel: false
-        }],
-
-
-
-    store: {
-        type: 'companies'
+    //width: 700,
+    height: 450,
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
     },
+
     columnLines: true,
     height: 350,
     title: 'Сгруппированная табица',
@@ -27,18 +25,74 @@ Ext.define('MyApp.view.main.Grid', {
 
     initComponent: function () {
         //this.width = 900;
+        Ext.apply(this,{
+            items: [{
+            flex: 1,
+            xtype: 'gridpanel',
+            store: {
+                type: 'companies'
+            },
+            columns:[{
+                header: 'Company',
+                sortable: true,
+                dataIndex: 'company',
+                flex: 1
+            },{
+                header: 'Price',
+                width: 75,
+                sortable: true,
+                formatter: 'usMoney',
+                dataIndex:'price'
+            },{
+                header: '%Change',
+                width: 100,
+                sortable: true,
+                dataIndex: 'pctChange'
+            },{
+                header: 'Last Update',
+                width: 115,
+                sortable: true,
+                renderer: Ext.util.Format.dateRenderer('m/d/Y'),
+                dataIndex: 'lastChange'
+            }],
+            stripeRows: true,
+            title: 'Company grid'
+        },{
+            frame: true,
+            height: 110,
+            margin: '10 0 0 0',
+            defaults:{
+                labelWidth: 150
+            },
+            items:[{
+                xtype: 'textfield',
+                fieldLabel: 'Info1',
+            },{
+                xtype: 'datefield',
+                fieldLabel: 'Info2',
+                value: new Date()
+            }]
+        }]
+    });
+        this.callParent();
+    }
+});
+
+
+            /*
+        }]
         this.columns = [{
         xtype: 'rownumberer',
         width: 40,
         sortable: false,
-        locked: true
+        
     }, {
         text: 'Companies (Filter)',
         sortable: true,
         dataIndex: 'company',
         groupable: false,
         width: 200,
-        locked: true,
+        
         renderer: function(v, cellValues, rec) {
             return rec.get('company');
         },
@@ -66,12 +120,7 @@ Ext.define('MyApp.view.main.Grid', {
                 buffer: 500
             }
         }
-    },/*{
-                text     : 'Компания',
-                flex     : 1,
-                sortable : false,
-                dataIndex: 'company'
-            }, */{
+    },{
                 text: 'Базовые цены',
                 columns: [{
                     text     : 'Цена',
@@ -125,7 +174,8 @@ Ext.define('MyApp.view.main.Grid', {
                 dataIndex: 'lastChange',
                 editor: {
                         xtype: 'datefield'
-                    },
+                    }
+
             }];
 
         this.callParent();
@@ -134,3 +184,4 @@ Ext.define('MyApp.view.main.Grid', {
         select: 'onItemSelected'
     }
 });
+*/
