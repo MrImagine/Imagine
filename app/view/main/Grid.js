@@ -78,7 +78,11 @@ Ext.define('MyApp.view.main.Grid', {
                     width    : 200,
                     sortable : true,
                     renderer : Ext.util.Format.usMoney,
-                    dataIndex: 'price'
+                    dataIndex: 'price',
+                    flex : 1,
+                    editor: {
+                        xtype: 'numberfield'
+                    },
                 }, {
                     text     : 'Изменение цен',
                     width    : 200,
@@ -91,7 +95,10 @@ Ext.define('MyApp.view.main.Grid', {
                         }
                         return val;
                     },
-                    dataIndex: 'change'
+                    dataIndex: 'change',
+                    editor: {
+                        xtype: 'numberfield'
+                    },
                 }, {
                     text     : '% Изменение цен',
                     width    : 200,
@@ -104,7 +111,10 @@ Ext.define('MyApp.view.main.Grid', {
                         }
                         return val;
                     },
-                    dataIndex: 'pctChange'
+                    dataIndex: 'pctChange',
+                    editor: {
+                        xtype: 'numberfield'
+                    },
                 }]
             }, {
                 xtype    : 'datecolumn',
@@ -112,7 +122,10 @@ Ext.define('MyApp.view.main.Grid', {
                 width    : 200,
                 sortable : true,
                 format   : 'm/d/Y',
-                dataIndex: 'lastChange'
+                dataIndex: 'lastChange',
+                editor: {
+                        xtype: 'datefield'
+                    },
             }];
 
         this.callParent();
