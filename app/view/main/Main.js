@@ -11,7 +11,6 @@ Ext.define('MyApp.view.main.Main', {
         'MyApp.view.main.List',
         'MyApp.view.main.Grid',
         'MyApp.view.main.Ggrid'
-
     ],
 
     controller: 'main',

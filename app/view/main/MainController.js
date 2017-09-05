@@ -7,14 +7,10 @@ Ext.define('MyApp.view.main.MainController', {
 
 
 /*
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Неуспел', 'Нужен Ajax', 'onConfirm', this);
-    },
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            
-        }
+    onItemSelected: function () {
+        if (true){
+        Ext.Msg.confirm('Победа', 'Прошка ИП');
+        };
     },
 */
     onClickButton: function () {

@@ -17,9 +17,5 @@ Ext.define('MyApp.view.main.List', {
         { text: 'Имя',  dataIndex: 'name' },
         { text: 'Email', dataIndex: 'email', flex: 1 },
         { text: 'Телефон', dataIndex: 'phone', flex: 1 }
-    ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+    ]
 });

@@ -1,0 +1,28 @@
+{
+    "data":[
+        {
+            "id": 1,
+            "company": "Прошка ИП",
+            "price": "71.72",
+            "change": "0.02",
+            "pctChange": "0.03",
+            "lastChange":"09/01/2017"
+        },
+        {
+            "id": 2,
+            "company": "Гллаша Ltd",
+            "price": "29.01",
+            "change": "0.42",
+            "pctChange": "1.47",
+            "lastChange":"09/01/2017"
+        },
+        {
+            "id": 3,
+            "company": "УдачаГроуп",
+            "price": "31.61",
+            "change": "-0.48",
+            "pctChange": "-1.54",
+            "lastChange":"09/02/2017"
+        }
+    ]
+}
